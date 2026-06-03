@@ -79,10 +79,8 @@ export function TaskItem({ task, onStatusChange, isUpdating }: TaskItemProps) {
             </span>
           </div>
 
-          {/* Description */}
           <p className="mt-0.5 text-xs text-slate-500 line-clamp-1">{task.description}</p>
 
-          {/* Due date */}
           <div className="mt-2 flex items-center gap-3">
             <span className={cn('flex items-center gap-1 text-xs', overdue ? 'text-red-600 font-medium' : 'text-slate-400')}>
               {overdue ? <AlertCircle className="h-3.5 w-3.5" /> : <Clock className="h-3.5 w-3.5" />}

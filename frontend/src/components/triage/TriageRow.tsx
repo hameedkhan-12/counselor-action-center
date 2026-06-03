@@ -59,7 +59,6 @@ export function TriageRow({ entry, rank }: TriageRowProps) {
         <span className="text-sm font-medium text-slate-400">{rank}</span>
       </td>
 
-      {/* Student */}
       <td className="py-3 pr-4">
         <div className="flex items-center gap-3">
           <div
@@ -83,7 +82,6 @@ export function TriageRow({ entry, rank }: TriageRowProps) {
         </div>
       </td>
 
-      {/* Status */}
       <td className="hidden py-3 pr-4 sm:table-cell">
         {student.enrollmentStatus === 'at_risk' ? (
           <span className="inline-flex items-center gap-1 rounded-full border border-amber-300 bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">
@@ -110,7 +108,6 @@ export function TriageRow({ entry, rank }: TriageRowProps) {
             <UrgencyBadge level={urgency.level} score={urgency.score} />
           </div>
           
-          {/* Momentum bar */}
           {momentum && (
             <div className="hidden lg:flex items-center gap-2">
               <div className="h-1 w-16 overflow-hidden rounded-full bg-slate-100">
@@ -128,7 +125,6 @@ export function TriageRow({ entry, rank }: TriageRowProps) {
       {/* Signals */}
       <td className="hidden py-3 pr-4 lg:table-cell">
         <div className="flex flex-col gap-2">
-          {/* Task & Message Signals */}
           <div className="flex items-center gap-3">
             {overdueTaskCount > 0 && (
               <span className="flex items-center gap-1 text-xs text-red-600">
@@ -147,14 +143,12 @@ export function TriageRow({ entry, rank }: TriageRowProps) {
             )}
           </div>
 
-          {/* Attention Debt Badge */}
           {attentionDebt && (
             <div>
               <AttentionDebtBadge attentionDebt={attentionDebt} />
             </div>
           )}
 
-          {/* Follow-Through Rate */}
           {followThroughRate !== null && followThroughRate !== undefined && (
             <span className={cn('text-xs font-medium', FOLLOW_THROUGH_COLOR[followThroughLabel])}>
               Follow-through: {followThroughRate}% ({followThroughLabel})
@@ -163,7 +157,6 @@ export function TriageRow({ entry, rank }: TriageRowProps) {
         </div>
       </td>
 
-      {/* Arrow */}
       <td className="w-10 py-3 pr-4">
         <ChevronRight className="h-4 w-4 text-slate-300 group-hover:text-blue-500 transition-colors" />
       </td>

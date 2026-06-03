@@ -144,7 +144,7 @@ cd backend && npm test
 cd frontend && npm test
 ```
 
-> Add a screenshot of your test output here after running.
+> SCREENSHOT OUTPUTS >>>>> STORED INSIDE docs folder
 
 ![Test Output](./docs/backend-test.png)
 ![Test Output](./docs/frontend-test.png)

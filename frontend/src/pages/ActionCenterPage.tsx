@@ -25,7 +25,6 @@ export function ActionCenterPage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Top nav — matches triage header */}
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-4xl px-4 py-0">
           <div className="flex h-14 items-center justify-between gap-3">
@@ -62,7 +61,6 @@ export function ActionCenterPage() {
 
         {!loading && !error && data && (
           <div className="space-y-4">
-            {/* Breadcrumb */}
             <nav className="flex items-center gap-1.5 text-xs text-slate-400">
               <Link to="/" className="hover:text-blue-600 transition-colors">Triage</Link>
               <span>/</span>
@@ -84,9 +82,7 @@ export function ActionCenterPage() {
               nextBestAction={data.nextBestAction}
             />
 
-            {/* Two-column layout on larger screens */}
             <div className="grid gap-4 lg:grid-cols-5">
-              {/* Tasks — wider column */}
               <div className="lg:col-span-3">
                 <TaskList
                   tasks={data.tasks}
@@ -95,7 +91,6 @@ export function ActionCenterPage() {
                 />
               </div>
 
-              {/* Messages — narrower column */}
               <div className="lg:col-span-2">
                 <MessageList messages={data.messages} />
               </div>

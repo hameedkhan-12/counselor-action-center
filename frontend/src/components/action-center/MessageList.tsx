@@ -12,7 +12,6 @@ export function MessageList({ messages }: MessageListProps) {
 
   return (
     <section className="rounded-lg border border-slate-200 bg-white">
-      {/* Header */}
       <div className="flex items-center gap-2 border-b border-slate-100 px-4 py-3">
         <Mail className="h-4 w-4 text-slate-500" />
         <h3 className="text-sm font-semibold text-slate-700">Messages</h3>
@@ -23,7 +22,6 @@ export function MessageList({ messages }: MessageListProps) {
         )}
       </div>
 
-      {/* Message list */}
       <div className="divide-y divide-slate-100">
         {messages.length === 0 ? (
           <p className="py-6 text-center text-sm text-slate-400">No messages</p>
@@ -36,7 +34,6 @@ export function MessageList({ messages }: MessageListProps) {
                 !msg.read && 'bg-blue-50/40'
               )}
             >
-              {/* Read indicator */}
               <div className="mt-1.5 flex h-2 w-2 shrink-0 items-center justify-center">
                 {msg.read ? (
                   <span className="h-2 w-2 rounded-full border border-slate-300" title="Read" />

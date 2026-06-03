@@ -34,7 +34,6 @@ export function TaskList({ tasks, onUrgencyUpdate, onTaskStatusChange }: TaskLis
 
   return (
     <section className="rounded-lg border border-slate-200 bg-white">
-      {/* Header */}
       <div className="flex items-center justify-between border-b border-slate-100 px-4 py-3">
         <div className="flex items-center gap-2">
           <CheckSquare className="h-4 w-4 text-slate-500" />
@@ -64,7 +63,6 @@ export function TaskList({ tasks, onUrgencyUpdate, onTaskStatusChange }: TaskLis
         )}
       </div>
 
-      {/* Completed tasks toggle */}
       {completedTasks.length > 0 && (
         <>
           <button

@@ -90,12 +90,10 @@ export function StudentCard({ student, urgency, momentum, attentionDebt, followT
         ))}
       </div>
 
-      {/* Momentum Indicator */}
       {momentum && (
         <MomentumIndicator momentum={momentum} />
       )}
 
-      {/* Follow-Through Bar */}
       {followThrough && (
         <FollowThroughBar followThrough={followThrough} />
       )}

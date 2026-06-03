@@ -15,7 +15,6 @@ export function TriagePage() {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Top nav bar — JIRA-style */}
       <header className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-6xl px-4 py-0">
           <div className="flex h-14 items-center gap-3">
