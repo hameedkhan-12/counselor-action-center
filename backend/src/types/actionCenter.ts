@@ -75,7 +75,6 @@ export interface AttentionDebtInfo {
   daysSinceLastAction: number;
   level: string;
   message: string | null;
-  lastActionDate: string | null;
 }
 
 export interface TriageStudentItem {

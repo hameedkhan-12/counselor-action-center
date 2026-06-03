@@ -13,7 +13,10 @@ app.use(requestIdMiddleware);
 app.use(loggerMiddleware);
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: [
+      "http://localhost:5173",
+      "https://counselor-action-center.vercel.app/"
+    ],
     credentials: true,
   }),
 );
