@@ -63,7 +63,7 @@ export function getTriageList(counselorId: string): TriageResponse {
       };
 
       // Compute follow-through rate
-      const followThroughResult = getFollowThroughRate(tasks, student.name);
+      const followThroughResult = getFollowThroughRate(tasks);
       const followThroughRate = followThroughResult.rate;
 
       return {
@@ -77,15 +77,12 @@ export function getTriageList(counselorId: string): TriageResponse {
       };
     })
     .sort((a, b) => {
+      // Primary sort: by urgency score (descending)
       if (a.urgency.score !== b.urgency.score) {
         return b.urgency.score - a.urgency.score;
       }
-      if (a.urgency.level === b.urgency.level) {
-        return (
-          b.attentionDebt.daysSinceLastAction - a.attentionDebt.daysSinceLastAction
-        );
-      }
-      return 0;
+      // Secondary sort: by attention debt days (descending - most neglected first)
+      return b.attentionDebt.daysSinceLastAction - a.attentionDebt.daysSinceLastAction;
     });
 
   // Count attention debt students

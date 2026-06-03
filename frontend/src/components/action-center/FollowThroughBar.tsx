@@ -1,4 +1,11 @@
-import type { FollowThroughResult } from '@/types';
+
+interface FollowThroughResult {
+  totalTasks: number;
+  completedTasks: number;
+  rate: number | null;
+  label: string;
+  interpretation: string;
+}
 
 interface FollowThroughBarProps {
   followThrough: FollowThroughResult;

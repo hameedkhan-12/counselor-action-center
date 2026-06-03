@@ -1,10 +1,14 @@
-import { FollowThroughResult } from '../types/actionCenter';
 import { Task } from '../types/task';
 
-export function getFollowThroughRate(
-  tasks: Task[],
-  studentName: string
-): FollowThroughResult {
+export interface FollowThroughResult {
+  totalTasks: number;
+  completedTasks: number;
+  rate: number | null;
+  label: string;
+  interpretation: string;
+}
+
+export function getFollowThroughRate(tasks: Task[]): FollowThroughResult {
   const totalTasks = tasks.length;
   const completedTasks = tasks.filter((t) => t.status === 'completed').length;
 
@@ -14,7 +18,12 @@ export function getFollowThroughRate(
   }
 
   const label = getFollowThroughLabel(rate);
-  const interpretation = getFollowThroughInterpretation(rate, label, studentName);
+  const interpretation = getFollowThroughInterpretation(
+    rate,
+    label,
+    totalTasks,
+    completedTasks
+  );
 
   return {
     totalTasks,
@@ -37,24 +46,25 @@ export function getFollowThroughLabel(rate: number | null): string {
 export function getFollowThroughInterpretation(
   rate: number | null,
   label: string,
-  studentName: string
+  totalTasks: number,
+  completedTasks: number
 ): string {
   if (rate === null) {
-    return `No task history yet for ${studentName}`;
+    return 'No task history yet';
   }
 
   switch (label) {
     case 'Low':
-      return `${studentName} completes ${rate}% of tasks — may signal disengagement or external barriers`;
+      return `Completes ${rate}% of tasks — may signal disengagement or external barriers`;
     case 'Below average':
-      return `${studentName} completes ${rate}% of tasks — follow-through is inconsistent`;
+      return `Completes ${rate}% of tasks — follow-through is inconsistent`;
     case 'Moderate':
-      return `${studentName} completes ${rate}% of tasks — making progress but room to improve`;
+      return `Completes ${rate}% of tasks — making progress but room to improve`;
     case 'Good':
-      return `${studentName} completes ${rate}% of tasks — strong follow-through`;
+      return `Completes ${rate}% of tasks — strong follow-through`;
     case 'High':
-      return `${studentName} completes ${rate}% of tasks — excellent task ownership`;
+      return `Completes ${rate}% of tasks — excellent task ownership`;
     default:
-      return `No task history yet for ${studentName}`;
+      return 'Task follow-through data available';
   }
 }

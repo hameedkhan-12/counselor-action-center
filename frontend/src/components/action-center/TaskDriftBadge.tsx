@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface TaskDriftBadgeProps {
   driftLevel: 'FRESH' | 'AGEING' | 'STALE' | 'FROZEN';
   driftDays: number;

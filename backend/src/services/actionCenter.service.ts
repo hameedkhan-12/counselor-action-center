@@ -104,7 +104,7 @@ export function getActionCenter(studentId: string): ActionCenterResponse | null 
   };
 
   // Compute follow-through
-  const followThrough = getFollowThroughRate(tasks, student.name);
+  const followThrough = getFollowThroughRate(tasks);
 
   return {
     student,

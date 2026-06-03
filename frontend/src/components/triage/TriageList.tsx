@@ -1,8 +1,8 @@
 import { TriageRow } from './TriageRow';
-import type { TriageStudentItem } from '@/types';
+import type { TriageStudentItem, TriageEntry } from '@/types';
 
 interface TriageListProps {
-  entries: TriageStudentItem[];
+  entries: (TriageStudentItem | TriageEntry)[];
 }
 
 export function TriageList({ entries }: TriageListProps) {

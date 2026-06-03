@@ -15,7 +15,7 @@ interface StudentCardProps {
 }
 
 export function StudentCard({ student, urgency, momentum, attentionDebt, followThrough }: StudentCardProps) {
-  const initials = student.name.split(' ').map((n: string) => n[0]).join('');
+  const initials = student.name.split(' ').map((n) => n[0]).join('');
 
   return (
     <div className="rounded-lg border border-slate-200 bg-white p-5">
@@ -92,7 +92,7 @@ export function StudentCard({ student, urgency, momentum, attentionDebt, followT
 
       {/* Momentum Indicator */}
       {momentum && (
-        <MomentumIndicator momentum={momentum} className="mt-3" />
+        <MomentumIndicator momentum={momentum} />
       )}
 
       {/* Follow-Through Bar */}
