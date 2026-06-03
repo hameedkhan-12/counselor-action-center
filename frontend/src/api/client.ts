@@ -7,7 +7,7 @@ import type {
 
 // Vite proxies /students, /counselor, /tasks → localhost:3000 in dev
 // In production, replace BASE_URL with the deployed API origin
-const BASE_URL = 'https://ec2-13-48-59-162.eu-north-1.compute.amazonaws.com/';
+const BASE_URL = import.meta.env.BACKEND_URL || 'http://localhost:3000';
 
 async function handleResponse<T>(res: Response): Promise<T> {
   if (!res.ok) {
