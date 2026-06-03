@@ -102,11 +102,6 @@ export interface MomentumInfo {
     frozenTaskCount: number;
 }
 
-export interface AttentionDebtInfo {
-    daysSinceLastAction: number;
-    level: string;
-    message: string | null;
-}
 
 export interface TriageStudentItem {
     student: Student;
@@ -114,7 +109,7 @@ export interface TriageStudentItem {
     overdueTaskCount: number;
     unreadMessageCount: number;
     momentum: MomentumInfo;
-    attentionDebt: AttentionDebtInfo;
+    attentionDebt: AttentionDebtResult;
     followThroughRate: number | null;
 }
 
