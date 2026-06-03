@@ -1,0 +1,44 @@
+# ==============================================================================
+# 1. Root / Global System Files
+# ==============================================================================
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# ==============================================================================
+# 2. Frontend Specific Dependencies & Builds
+# ==============================================================================
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+frontend/.next/
+frontend/.nuxt/
+frontend/out/
+frontend/*.tsbuildinfo
+
+# Frontend Environment Configurations
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+
+# ==============================================================================
+# 3. Backend Specific Dependencies & Runtime Files
+# ==============================================================================
+backend/node_modules/
+backend/dist/
+backend/build/
+backend/out/
+
+# Backend Environment & Secret Keys
+backend/.env
+backend/.env.local
+
+# Runtime databases & caches (e.g., SQLite, Prisma, Nodemon)
+backend/*.db
+backend/*.sqlite
+backend/.nodemonrestore
+backend/.cache/

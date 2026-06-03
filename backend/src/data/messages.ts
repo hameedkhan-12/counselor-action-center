@@ -1,0 +1,78 @@
+import { Message } from "../types/message";
+
+export const messages: Message[] = [
+    {
+        id: "msg_001",
+        studentId: "stu_001",
+        from: "Mrs. Thompson (Math)",
+        subject: "Maya missing assignments",
+        preview: "Maya has not submitted the last three homework sets...",
+        read: false,
+        receivedAt: "2026-05-30T08:30:00Z",
+    },
+    {
+        id: "msg_002",
+        studentId: "stu_001",
+        from: "Maya Patel",
+        subject: "Can we meet this week?",
+        preview: "Hi, I was wondering if you had any time to chat about my grades...",
+        read: false,
+        receivedAt: "2026-05-29T17:00:00Z",
+    },
+    {
+        id: "msg_003",
+        studentId: "stu_001",
+        from: "Attendance Office",
+        subject: "Absence notification",
+        preview: "Maya was marked absent on May 25. Please follow up...",
+        read: true,
+        receivedAt: "2026-05-25T09:00:00Z",
+    },
+    {
+        id: "msg_004",
+        studentId: "stu_002",
+        from: "Jordan Lee",
+        subject: "Essay draft attached",
+        preview: "Hi, here's my latest Common App essay draft. Would love your feedback...",
+        read: false,
+        receivedAt: "2026-05-31T10:00:00Z",
+    },
+    {
+        id: "msg_005",
+        studentId: "stu_002",
+        from: "Mr. Garcia (English)",
+        subject: "Recommendation letter sent",
+        preview: "I have submitted Jordan's recommendation letter via Naviance...",
+        read: true,
+        receivedAt: "2026-05-23T14:00:00Z",
+    },
+    {
+        id: "msg_006",
+        studentId: "stu_003",
+        from: "Parent — Maria Rivera",
+        subject: "Concerns about Carlos",
+        preview: "I wanted to reach out about the incident last week. We are very worried...",
+        read: false,
+        receivedAt: "2026-05-30T20:00:00Z",
+    },
+    {
+        id: "msg_007",
+        studentId: "stu_003",
+        from: "Student Support Services",
+        subject: "Referral received",
+        preview: "We have received the referral for Carlos Rivera and will schedule...",
+        read: false,
+        receivedAt: "2026-05-29T11:00:00Z",
+    },
+    {
+        id: "msg_008",
+        studentId: "stu_003",
+        from: "Online Learning Platform",
+        subject: "Credit recovery login details",
+        preview: "Your student has been enrolled in English 10 credit recovery...",
+        read: true,
+        receivedAt: "2026-05-21T08:00:00Z",
+    },
+];
+
+export const findMessagesByStudentId = (studentId: string): Message[] => messages.filter(m => m.studentId === studentId);

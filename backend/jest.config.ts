@@ -1,0 +1,20 @@
+import type { Config } from 'jest';
+
+const config: Config = {
+  preset: 'ts-jest',
+  testEnvironment: 'node',
+  roots: ['<rootDir>/tests'],
+  testMatch: ['**/*.test.ts'],
+  moduleFileExtensions: ['ts', 'js', 'json'],
+  transform: {
+    '^.+\\.ts$': ['ts-jest', {
+      tsconfig: 'tsconfig.test.json',
+    }],
+    '^.+\\.js$': 'babel-jest',
+  },
+  transformIgnorePatterns: [
+    'node_modules/(?!(uuid)/)',
+  ],
+};
+
+export default config;
