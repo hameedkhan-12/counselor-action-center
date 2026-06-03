@@ -54,11 +54,11 @@ describe('GET /counselor/:id/triage', () => {
 
     expect(res.status).toBe(200);
     expect(res.body).toHaveProperty('counselorId', 'csl_001');
-    expect(res.body).toHaveProperty('rankedStudents');
-    expect(Array.isArray(res.body.rankedStudents)).toBe(true);
-    expect(res.body.rankedStudents.length).toBeGreaterThanOrEqual(2);
+    expect(res.body).toHaveProperty('students');
+    expect(Array.isArray(res.body.students)).toBe(true);
+    expect(res.body.students.length).toBeGreaterThanOrEqual(2);
 
-    const scores: number[] = res.body.rankedStudents.map(
+    const scores: number[] = res.body.students.map(
       (entry: { urgency: { score: number } }) => entry.urgency.score
     );
 

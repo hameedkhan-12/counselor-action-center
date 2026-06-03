@@ -21,25 +21,79 @@ export interface UrgencyResult {
   breakdown: UrgencyBreakdown;
 }
 
-export interface ActionCenterResponse {
-  student: Student;
-  tasks: Task[];
-  messages: Message[];
-  urgency: UrgencyResult;
-  insight: string;
-  nextBestAction: string;
+export interface TaskDriftInfo {
+  driftDays: number;
+  driftLevel: 'FRESH' | 'AGEING' | 'STALE' | 'FROZEN';
+  warningMessage: string | null;
 }
 
-export interface TriageEntry {
+export interface EnrichedTask extends Task {
+  drift: TaskDriftInfo;
+}
+
+export interface MomentumResult {
+  level: 'ACTIVE' | 'MOVING' | 'SLOWING' | 'STALLED';
+  averageDriftDays: number;
+  frozenTaskCount: number;
+  color: string;
+}
+
+export interface AttentionDebtResult {
+  lastActionDate: string;
+  daysSinceLastAction: number;
+  level: 'CURRENT' | 'DUE' | 'OVERDUE' | 'CRITICAL';
+  message: string | null;
+}
+
+export interface FollowThroughResult {
+  totalTasks: number;
+  completedTasks: number;
+  rate: number | null;
+  label: string;
+  interpretation: string;
+}
+
+export interface ActionCenterResponse {
+  student: Student;
+  tasks: EnrichedTask[];
+  messages: Message[];
+  urgency: UrgencyResult;
+  momentum: MomentumResult;
+  insight: string;
+  nextBestAction: string;
+  attentionDebt: AttentionDebtResult;
+  followThrough: FollowThroughResult;
+}
+
+export interface MomentumInfo {
+  level: string;
+  averageDriftDays: number;
+  frozenTaskCount: number;
+}
+
+export interface AttentionDebtInfo {
+  daysSinceLastAction: number;
+  level: string;
+  message: string | null;
+}
+
+export interface TriageStudentItem {
   student: Student;
   urgency: UrgencyResult;
   overdueTaskCount: number;
   unreadMessageCount: number;
+  momentum: MomentumInfo;
+  attentionDebt: AttentionDebtInfo;
+  followThroughRate: number | null;
 }
 
 export interface TriageResponse {
   counselorId: string;
-  rankedStudents: TriageEntry[];
+  totalStudents: number;
+  criticalCount: number;
+  highCount: number;
+  attentionDebtCount: number;
+  students: TriageStudentItem[];
   generatedAt: string;
 }
 

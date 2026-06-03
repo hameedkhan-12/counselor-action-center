@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "dev": "nodemon --exec ts-node src/server.ts",
+    "dev": "nodemon -e ts,json --exec ts-node src/server.ts",
     "start": "node dist/server.js",
     "watch": "tsc --watch",
     "test": "jest --runInBand --forceExit",
