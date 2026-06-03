@@ -15,7 +15,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5173",
-      "https://counselor-action-center.vercel.app/"
+      "https://counselor-action-center.vercel.app"
     ],
     credentials: true,
   }),
