@@ -6,8 +6,8 @@ import type {
 } from '@/types';
 
 // Vite proxies /students, /counselor, /tasks → localhost:3000 in dev
-// In production, replace BASE_URL with the deployed API origin
-const BASE_URL = import.meta.env.BACKEND_URL || 'http://localhost:3000';
+// In production, we need to set BASE_URL with the deployed API origin
+const BASE_URL = import.meta.env.VITE_API_URL! || 'http://localhost:3000';
 
 async function handleResponse<T>(res: Response): Promise<T> {
   if (!res.ok) {
