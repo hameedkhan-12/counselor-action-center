@@ -19,7 +19,7 @@ cd counselor-action-center
 # Backend
 cd backend
 npm install
-npm run dev        # runs on http://localhost:3001
+npm run dev        # runs on http://localhost:3000
 
 # Frontend (new terminal)
 cd frontend
@@ -146,7 +146,8 @@ cd frontend && npm test
 
 > Add a screenshot of your test output here after running.
 
-![Test Output](./docs/test-output.png)
+![Test Output](./docs/backend-test.png)
+![Test Output](./docs/frontend-test.png)
 
 ---
 
