@@ -27,7 +27,7 @@ export interface ActionCenterResponse {
   messages: Message[];
   urgency: UrgencyResult;
   insight: string;
-  nextBaseAction: string;
+  nextBestAction: string;
 }
 
 export interface TriageEntry {
