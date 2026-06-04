@@ -39,7 +39,7 @@ export interface TriageEntry {
 
 export interface TriageResponse {
   counselorId: string;
-  entries: TriageEntry[];
+  rankedStudents: TriageEntry[];
   generatedAt: string;
 }
 

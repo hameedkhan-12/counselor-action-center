@@ -3,7 +3,9 @@ import cors from "cors";
 import { requestIdMiddleware } from "./middleware/requestId.middleware";
 import { loggerMiddleware } from "./middleware/logger.middleware";
 import studentRoutes from "./routes/student.routes";
+import counselorRoutes from "./routes/counselor.route";
 import { errorMiddleware } from "./middleware/error.middleware";
+
 const app: express.Application = express();
 
 app.use(requestIdMiddleware);
@@ -16,7 +18,8 @@ app.use(
 );
 app.use(express.json());
 
-app.use('/students', studentRoutes);
+app.use("/students", studentRoutes);
+app.use("/counselor", counselorRoutes);
 
 app.use(errorMiddleware);
 
