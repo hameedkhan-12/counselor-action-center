@@ -8,11 +8,7 @@ const config: Config = {
   moduleFileExtensions: ['ts', 'js', 'json'],
   transform: {
     '^.+\\.ts$': ['ts-jest', {
-      tsconfig: {
-        strict: true,
-        esModuleInterop: true,
-        module: 'commonjs',
-      },
+      tsconfig: 'tsconfig.test.json',
     }],
     '^.+\\.js$': 'babel-jest',
   },
